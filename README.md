@@ -1,4 +1,4 @@
-# Experiment 03: Analyze Synchronization Mechanisms in Parallel Programs
+# Experiment 05: Analyze Synchronization Mechanisms in Parallel Programs
 
 ## 1. Objective
 
