@@ -1,0 +1,36 @@
+# Synchronization Mechanisms Benchmark
+
+## Benchmark Results
+
+**Benchmark Command:** `./compare_sync`
+
+**Expected Final Count:** `10000000`
+
+| Mechanism | Threads | Final Count | Correctness | Time (s) |
+|---|---:|---:|---|---:|
+| None | 1 | 10000000 | Correct | 0.0084 |
+| Critical | 1 | 10000000 | Correct | 0.1135 |
+| Atomic | 1 | 10000000 | Correct | 0.0669 |
+| Lock | 1 | 10000000 | Correct | 0.1119 |
+| None | 2 | 5272170 | INCORRECT | 0.0112 |
+| Critical | 2 | 10000000 | Correct | 0.3401 |
+| Atomic | 2 | 10000000 | Correct | 0.1641 |
+| Lock | 2 | 10000000 | Correct | 0.3700 |
+| None | 4 | 4792950 | INCORRECT | 0.0062 |
+| Critical | 4 | 10000000 | Correct | 0.3238 |
+| Atomic | 4 | 10000000 | Correct | 0.1623 |
+| Lock | 4 | 10000000 | Correct | 0.3784 |
+| None | 8 | 5671941 | INCORRECT | 0.0084 |
+| Critical | 8 | 10000000 | Correct | 0.3260 |
+| Atomic | 8 | 10000000 | Correct | 0.1633 |
+| Lock | 8 | 10000000 | Correct | 0.3919 |
+
+## Conclusion
+
+The benchmark results show that synchronization is necessary to maintain correctness in parallel programs.
+
+- Without synchronization, race conditions occur when multiple threads update the shared counter.
+- Critical sections, atomic operations, and locks produce the expected final count of 10000000.
+- Atomic operations achieved the lowest execution time among the synchronization methods for 2, 4, and 8 threads.
+
+Therefore, atomic operations provided the best performance among the tested synchronization methods in this experiment.
